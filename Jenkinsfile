@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_REPO = 'docker.io/24mis0585/greatest-three'
-        DOCKER_CREDENTIALS_ID = 'dockerhub-creds'
+        DOCKER_CREDENTIALS_ID = 'dockerhub-cred'
         KUBECONFIG_CREDENTIAL_ID = 'kubeconfig'
         K8S_NAMESPACE = 'greatest-three'
     }
