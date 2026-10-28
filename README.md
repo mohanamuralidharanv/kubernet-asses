@@ -27,8 +27,8 @@ The expected response is `9`.
 1. Make this project available in a Git repository and create a Jenkins
    **Pipeline** job configured to use its `Jenkinsfile` (Pipeline script from
    SCM).
-2. Ensure the Jenkins Linux agent has JDK 17, Maven, Docker, `kubectl`, and
-   network access to the Docker registry and Kubernetes API.
+2. Ensure the Jenkins Windows agent has JDK 17, Maven, Docker, PowerShell,
+   `kubectl`, and network access to the Docker registry and Kubernetes API.
 3. Have a cluster administrator create the namespace once:
 
    ```sh
