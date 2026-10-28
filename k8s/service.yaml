@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: greatest-three
+  namespace: __NAMESPACE__
+spec:
+  type: ClusterIP
+  selector:
+    app: greatest-three
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

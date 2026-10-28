@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greatest-three
+  namespace: __NAMESPACE__
+  labels:
+    app: greatest-three
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: greatest-three
+  template:
+    metadata:
+      labels:
+        app: greatest-three
+    spec:
+      containers:
+        - name: greatest-three
+          image: __IMAGE__
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
